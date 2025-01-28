@@ -49,7 +49,7 @@ public class E_26_RemoveDuplicatesFromSortedArray {
         for (int i = 0; i < n; i++) {
             nums[i] = sc.nextInt();
         }
-        System.out.println("Array Provided : " + Arrays.toString(nums));
+         System.out.println("Array Provided : " + Arrays.toString(nums));
         System.out.println("Number of unique elements: " + removeDuplicates(nums));
     }
 
