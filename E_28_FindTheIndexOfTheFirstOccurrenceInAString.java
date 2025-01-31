@@ -30,7 +30,7 @@ public class E_28_FindTheIndexOfTheFirstOccurrenceInAString {
     public static int strStr(String haystack, String needle) {
         int n = haystack.length();
         int m = needle.length();
-        for (int i = 0; i < n - m; i++) {
+        for (int i = 0; i <= n - m; i++) {   // length will be 0 when both n and m is same so make it <= n-m
             if (haystack.substring(i, i + m).equals(needle)) { // it will check for substring from i = 0 to 0+m(excluded) which means upto i = 0 to 0+m-1 then i++
                 return i;
             }
