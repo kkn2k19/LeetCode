@@ -27,7 +27,7 @@
 // - s[7] -> shift('d',4) = 'h'
 
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class E_1844_ReplaceAllDigitsWithCharacters {
     public static void main(String[] args) {
