@@ -2,23 +2,54 @@
 // https://leetcode.com/problems/successful-pairs-of-spells-and-potions/description/?envType=daily-question&envId=2025-10-08
 // 2300. Successful Pairs of Spells and Potions
 
-import java.util.Arrays;
+import java.util.*;
 
 public class M_2300_SuccessfulPairsOfSpellsAndPotions {
-    // Brute Force
-    public static int[] successfulPairs(int[] spells, int[] potions, long success) {
+    // Brute Force -- TLE on LC -- O(n*m)
+    // public static int[] successfulPairs(int[] spells, int[] potions, long success) {
+    //     int[] pairs = new int[spells.length];
+    //     int i = 0;
+    //     for (int s : spells) {
+    //         int count = 0;
+    //         for (int p : potions) {
+    //             if ((long) p * s >= success)
+    //                 count += 1;
+    //         }
+    //         pairs[i] = count;
+    //         i += 1;
+    //     }
+    //     return pairs;
+    // }
+
+    // Binary Search + sorting logic -- sorting->O(mlogm) , each spell -> O(logm)  -- O((n+m)logm)
+    public static int[] successfulPairs(int[] spells, int[] potions, long success){
+        Arrays.sort(potions);
+        int m = potions.length;
         int[] pairs = new int[spells.length];
-        int i = 0;
-        for (int s : spells) {
-            int count = 0;
-            for (int p : potions) {
-                if ((long) p * s >= success)
-                    count += 1;
-            }
-            pairs[i] = count;
-            i += 1;
+
+        for (int i = 0; i < spells.length; i++){
+            int spell = spells[i];
+
+            // now for every spell - find min potion to make it successful (since potion*spell >= success so potion >= sucess/spell)
+            // use this formula for getting one value larger than P = su/sp
+            long minPotion = (success + spell - 1)/spell;
+
+            int index = binarySearch(potions, minPotion);  // find first index where potion >= minPotion
+
+            pairs[i] = m - index; // since potions is sorted so from i=index to m all potions will satisfy for this spell
         }
         return pairs;
+    }
+
+    public static int binarySearch(int[] potions, long target){
+        int start = 0;
+        int end = potions.length - 1;
+        while (start <= end){
+            int mid = start + (end - start) / 2;
+            if (potions[mid] < target) start = mid + 1;
+            else end= mid - 1;
+        }
+        return start; // first index with potion >= target
     }
 
     public static void main(String[] args) {
