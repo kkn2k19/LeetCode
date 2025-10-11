@@ -3,21 +3,40 @@
 // 1952. Three Divisors
 
 public class E_1952_ThreeDivisors {
+    // public static boolean isThree(int n) {
+    // int count = 0;
+    // int i = 1;
+    // while (i * i <= n) {
+    // if (n % i == 0) {
+    // count += 1;
+    // if (i != n / i)
+    // count += 1;
+    // }
+    // i += 1;
+    // }
+    // // System.out.print(count);
+    // if (count == 3)
+    // return true;
+    // return false;
+    // }
+
+    // if it has 3 factors it means - 1, n, and Math.sqrt(n) -- which means n must
+    // be a perfect square
     public static boolean isThree(int n) {
-        int count = 0;
-        int i = 1;
-        while (i * i <= n) {
-            if (n % i == 0) {
-                count += 1;
-                if (i != n / i)
-                    count += 1;
-            }
-            i += 1;
+        int root = (int) Math.sqrt(n);
+        if (root * root != n)
+            return false; // not a perfect square
+        return isPrime(root);
+    }
+
+    public static boolean isPrime(int n) {
+        if (n < 2)
+            return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0)
+                return false;
         }
-        // System.out.print(count);
-        if (count == 3)
-            return true;
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
