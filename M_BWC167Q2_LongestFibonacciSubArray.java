@@ -1,6 +1,6 @@
 // 12.10.2025
-// https://leetcode.com/contest/biweekly-contest-167/problems/equal-score-substrings/description/
-// Q1. Equal Score Substrings
+// https://leetcode.com/contest/biweekly-contest-167/problems/longest-fibonacci-subarray/description/
+// Q2. Longest Fibonacci SubArray
 
 public class M_BWC167Q2_LongestFibonacciSubArray {
     public static int longestSubarray(int[] nums) {
