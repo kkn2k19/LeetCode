@@ -1,3 +1,7 @@
+// 13.10.2025
+// https://leetcode.com/problems/convert-integer-to-the-sum-of-two-no-zero-integers/description/
+// 1317. Convert Integer to the Sum of Two No-Zero Integers
+
 import java.util.*;
 
 public class E_1317_ConvertIntegerToTheSumOfTwoNoZeroIntegers {
