@@ -17,7 +17,7 @@ public class E_3349_AdjacentIncreasingSubarraysDetectionI {
         int n = nums.size();
         // part 1 = i to i+k-1 -- i+k -> i+k not included
         // part 2 = i+k to i+2*k - 1 --> i+2*k not included
-        for (int i = 0; i + 2 * k <= n; i++) {
+        for (int i = 0; (i + 2 * k - 1) < n; i++) {
             if (isIncreasing(nums, i, i + k) && isIncreasing(nums, i + k, i + 2 * k))
                 return true;
         }
