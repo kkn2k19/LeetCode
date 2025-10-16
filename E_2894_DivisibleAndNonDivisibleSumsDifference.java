@@ -29,3 +29,11 @@ public class E_2894_DivisibleAndNonDivisibleSumsDifference {
         System.out.println(differenceOfSums(n3, m3));
     }
 }
+
+// e:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac
+// E_2894_DivisibleAndNonDivisibleSumsDifference.java && java
+// E_2894_DivisibleAndNonDivisibleSumsDifference && del
+// E_2894_DivisibleAndNonDivisibleSumsDifference.class
+// 19
+// 15
+// -15
