@@ -3,15 +3,30 @@
 // 2016. Maximum Difference Between Increasing Elements
 
 public class E_2016_MaximumDifferenceBetweenIncreasingElements {
+    // public static int maximumDifference(int[] nums) {
+    //     int max = -1;
+    //     int n = nums.length;
+    //     for (int i = 0; i < n; i++) {
+    //         for (int j = i + 1; j < n; j++) {
+    //             if (nums[j] > nums[i]) {
+    //                 int diff = nums[j] - nums[i];
+    //                 max = Math.max(max, diff);
+    //             }
+    //         }
+    //     }
+    //     return max;
+    // }
+
     public static int maximumDifference(int[] nums) {
-        int max = -1;
         int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[j] > nums[i]) {
-                    int diff = nums[j] - nums[i];
-                    max = Math.max(max, diff);
-                }
+        int max = -1;
+        int min = nums[0];
+        // go ahead and always get compared with min
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > min) {
+                max = Math.max(max, nums[i] - min);
+            } else {
+                min = nums[i];
             }
         }
         return max;
@@ -26,13 +41,17 @@ public class E_2016_MaximumDifferenceBetweenIncreasingElements {
 
         int[] nums3 = { 1, 5, 2, 10 };
         System.out.println(maximumDifference(nums3));
+
+        int[] nums4 = { 1, 2, 10 };
+        System.out.println(maximumDifference(nums4));
     }
 }
 
-// E:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac
+// e:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac
 // E_2016_MaximumDifferenceBetweenIncreasingElements.java && java
 // E_2016_MaximumDifferenceBetweenIncreasingElements && del
 // E_2016_MaximumDifferenceBetweenIncreasingElements.class
 // 4
 // -1
+// 9
 // 9
