@@ -66,3 +66,7 @@ public class E_67_AddBinary {
         System.out.println(addBinary(a2, b2));
     }
 }
+
+// e:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac E_67_AddBinary.java && java E_67_AddBinary && del E_67_AddBinary.class
+// 100
+// 10101
