@@ -2,6 +2,8 @@
 // https://leetcode.com/problems/add-binary/
 // 67. Add Binary
 
+import java.util.*;
+
 public class E_67_AddBinary {
     /* 
     public static String addBinary(String a, String b) {
@@ -31,6 +33,7 @@ public class E_67_AddBinary {
     public static String addBinary(String a, String b) {
         int size = Math.max(a.length(), b.length());
         char[] res = new char[size + 1]; // 1 extra size for carry if there !!
+        Arrays.fill(res, '0');
         int i = a.length() - 1;
         int j = b.length() - 1;
         int k = res.length - 1;
