@@ -42,3 +42,10 @@ public class E_2264_Largest3SameDigitNumberInString {
         System.out.println(largestGoodInteger(num3));
     }
 }
+
+// e:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac
+// E_2264_Largest3SameDigitNumberInString.java && java
+// E_2264_Largest3SameDigitNumberInString && del
+// E_2264_Largest3SameDigitNumberInString.class
+// 777
+// 000
