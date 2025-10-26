@@ -5,7 +5,7 @@
 import java.util.*;
 
 public class E_3726_RemoveZeroesInDecimalRepresentation {
-    public static long removeZeroes(long n) {
+    public static long removeZeros(long n) {
         StringBuilder sb = new StringBuilder("");
         while (n > 0) {
             int d = (int) (n % 10);
@@ -19,10 +19,10 @@ public class E_3726_RemoveZeroesInDecimalRepresentation {
 
     public static void main(String[] args) {
         long n1 = 1020030;
-        System.out.println(removeZeroes(n1));
+        System.out.println(removeZeros(n1));
 
         long n2 = 1;
-        System.out.println(removeZeroes(n2));
+        System.out.println(removeZeros(n2));
     }
 }
 
