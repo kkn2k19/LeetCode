@@ -3,20 +3,31 @@
 // 3330. Find the Original Typed String I
 
 public class E_3330_FindTheOriginalTypedStringI {
-    public static int possibleStringCount(String word) {
+    // public static int possibleStringCount(String word) {
+    //     int n = word.length();
+    //     int total = 1;
+    //     int start = 0;
+    //     while (start < n) {
+    //         int end = start + 1;
+    //         while (end < n && word.charAt(start) == word.charAt(end)) {
+    //             end += 1;
+    //         }
+    //         int repeats = end - start - 1;
+    //         total += repeats;
+    //         start = end;
+    //     }
+    //     return total;
+    // }
+
+    public static int possibleStringCount(String word){
+        int res = 1;
         int n = word.length();
-        int total = 1;
-        int start = 0;
-        while (start < n) {
-            int end = start + 1;
-            while (end < n && word.charAt(start) == word.charAt(end)) {
-                end += 1;
+        for (int  i =1; i < n; i++){
+            if (word.charAt(i- 1) == word.charAt(i)) {
+                res += 1;
             }
-            int repeats = end - start - 1;
-            total += repeats;
-            start = end;
         }
-        return total;
+        return res;
     }
 
     public static void main(String[] args) {
