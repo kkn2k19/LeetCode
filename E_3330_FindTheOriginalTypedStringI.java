@@ -1,23 +1,22 @@
-// 17.10.2025
+// 28.10.2025
 // https://leetcode.com/problems/find-the-original-typed-string-i/?envType=daily-question&envId=2025-10-17
 // 3330. Find the Original Typed String I
 
 public class E_3330_FindTheOriginalTypedStringI {
-    // wrong - not solved yet ---
     public static int possibleStringCount(String word) {
-        int[] freq = new int[26];
-        for (char ch : word.toCharArray()) {
-            freq[ch - 'a'] += 1;
-        }
-        int sum = 0;
-        for (int f : freq) {
-            if (f > 1) {
-                sum += (f - 1);
-            } else {
-                sum += f;
+        int n = word.length();
+        int total = 1;
+        int start = 0;
+        while (start < n) {
+            int end = start + 1;
+            while (end < n && word.charAt(start) == word.charAt(end)) {
+                end += 1;
             }
+            int repeats = end - start - 1;
+            total += repeats;
+            start = end;
         }
-        return sum;
+        return total;
     }
 
     public static void main(String[] args) {
@@ -31,3 +30,11 @@ public class E_3330_FindTheOriginalTypedStringI {
         System.out.println(possibleStringCount(word3));
     }
 }
+
+// E:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac
+// E_3330_FindTheOriginalTypedStringI.java && java
+// E_3330_FindTheOriginalTypedStringI && del
+// E_3330_FindTheOriginalTypedStringI.class
+// 5
+// 1
+// 4
