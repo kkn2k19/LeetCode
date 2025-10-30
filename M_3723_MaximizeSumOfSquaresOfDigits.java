@@ -36,6 +36,9 @@ public class M_3723_MaximizeSumOfSquaresOfDigits {
     }
 }
 
-// E:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac M_3723_MaximizeSumOfSquaresOfDigits.java && java M_3723_MaximizeSumOfSquaresOfDigits && del M_3723_MaximizeSumOfSquaresOfDigits.class
+// E:\Karan_codes\LeetCode>cd "e:\Karan_codes\LeetCode\" && javac
+// M_3723_MaximizeSumOfSquaresOfDigits.java && java
+// M_3723_MaximizeSumOfSquaresOfDigits && del
+// M_3723_MaximizeSumOfSquaresOfDigits.class
 // 30
 // 98
